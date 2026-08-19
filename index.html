@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#080b14" />
+    <meta name="description" content="키보드와 터치로 즐기는 네온 스네이크 게임" />
+    <title>NEON SNAKE</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div>
+          <p class="eyebrow">ARCADE // 01</p>
+          <h1>NEON<br /><span>SNAKE</span></h1>
+        </div>
+        <div class="status-dot" aria-label="게임 준비 완료">
+          <span></span> ONLINE
+        </div>
+      </header>
+
+      <section class="scoreboard" aria-label="점수판">
+        <div class="score-card">
+          <span>SCORE</span>
+          <strong id="score">000</strong>
+        </div>
+        <div class="score-divider"></div>
+        <div class="score-card score-card--best">
+          <span>BEST</span>
+          <strong id="best-score">000</strong>
+        </div>
+      </section>
+
+      <section class="game-area" aria-label="스네이크 게임 영역">
+        <div class="canvas-frame" id="canvas-frame">
+          <canvas id="game-canvas" width="600" height="600" aria-label="스네이크 게임 보드"></canvas>
+          <div class="scanlines" aria-hidden="true"></div>
+          <div class="game-message" id="game-message" role="status" aria-live="polite">
+            <p id="message-kicker">READY?</p>
+            <h2 id="message-title">SWIPE TO START</h2>
+            <p id="message-detail">키보드 방향키도 사용할 수 있어요</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="controls">
+        <p class="control-hint"><span>↕</span> SWIPE OR USE ARROW KEYS</p>
+        <button id="restart-button" type="button">
+          <span aria-hidden="true">↻</span> RESTART GAME
+        </button>
+      </footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
